@@ -1,0 +1,688 @@
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=utf-8"/><title>Informatyka Klasa 7 dział 1</title><style>
+/* cspell:disable-file */
+/* webkit printing magic: print all background colors */
+html {
+	-webkit-print-color-adjust: exact;
+}
+* {
+	box-sizing: border-box;
+	-webkit-print-color-adjust: exact;
+}
+
+html,
+body {
+	margin: 0;
+	padding: 0;
+}
+@media only screen {
+	body {
+		margin: 2em auto;
+		max-width: 900px;
+		color: rgb(55, 53, 47);
+	}
+}
+
+body {
+	line-height: 1.5;
+	white-space: pre-wrap;
+}
+
+a,
+a.visited {
+	color: inherit;
+	text-decoration: underline;
+}
+
+.pdf-relative-link-path {
+	font-size: 80%;
+	color: #444;
+}
+
+h1,
+h2,
+h3 {
+	letter-spacing: -0.01em;
+	line-height: 1.2;
+	font-weight: 600;
+	margin-bottom: 0;
+}
+
+.page-title {
+	font-size: 2.5rem;
+	font-weight: 700;
+	margin-top: 0;
+	margin-bottom: 0.75em;
+}
+
+h1 {
+	font-size: 1.875rem;
+	margin-top: 1.875rem;
+}
+
+h2 {
+	font-size: 1.5rem;
+	margin-top: 1.5rem;
+}
+
+h3 {
+	font-size: 1.25rem;
+	margin-top: 1.25rem;
+}
+
+.source {
+	border: 1px solid #ddd;
+	border-radius: 3px;
+	padding: 1.5em;
+	word-break: break-all;
+}
+
+.callout {
+	border-radius: 3px;
+	padding: 1rem;
+}
+
+figure {
+	margin: 1.25em 0;
+	page-break-inside: avoid;
+}
+
+figcaption {
+	opacity: 0.5;
+	font-size: 85%;
+	margin-top: 0.5em;
+}
+
+mark {
+	background-color: transparent;
+}
+
+.indented {
+	padding-left: 1.5em;
+}
+
+hr {
+	background: transparent;
+	display: block;
+	width: 100%;
+	height: 1px;
+	visibility: visible;
+	border: none;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.09);
+}
+
+img {
+	max-width: 100%;
+}
+
+@media only print {
+	img {
+		max-height: 100vh;
+		object-fit: contain;
+	}
+}
+
+@page {
+	margin: 1in;
+}
+
+.collection-content {
+	font-size: 0.875rem;
+}
+
+.column-list {
+	display: flex;
+	justify-content: space-between;
+}
+
+.column {
+	padding: 0 1em;
+}
+
+.column:first-child {
+	padding-left: 0;
+}
+
+.column:last-child {
+	padding-right: 0;
+}
+
+.table_of_contents-item {
+	display: block;
+	font-size: 0.875rem;
+	line-height: 1.3;
+	padding: 0.125rem;
+}
+
+.table_of_contents-indent-1 {
+	margin-left: 1.5rem;
+}
+
+.table_of_contents-indent-2 {
+	margin-left: 3rem;
+}
+
+.table_of_contents-indent-3 {
+	margin-left: 4.5rem;
+}
+
+.table_of_contents-link {
+	text-decoration: none;
+	opacity: 0.7;
+	border-bottom: 1px solid rgba(55, 53, 47, 0.18);
+}
+
+table,
+th,
+td {
+	border: 1px solid rgba(55, 53, 47, 0.09);
+	border-collapse: collapse;
+}
+
+table {
+	border-left: none;
+	border-right: none;
+}
+
+th,
+td {
+	font-weight: normal;
+	padding: 0.25em 0.5em;
+	line-height: 1.5;
+	min-height: 1.5em;
+	text-align: left;
+}
+
+th {
+	color: rgba(55, 53, 47, 0.6);
+}
+
+ol,
+ul {
+	margin: 0;
+	margin-block-start: 0.6em;
+	margin-block-end: 0.6em;
+}
+
+li > ol:first-child,
+li > ul:first-child {
+	margin-block-start: 0.6em;
+}
+
+ul > li {
+	list-style: disc;
+}
+
+ul.to-do-list {
+	padding-inline-start: 0;
+}
+
+ul.to-do-list > li {
+	list-style: none;
+}
+
+.to-do-children-checked {
+	text-decoration: line-through;
+	opacity: 0.375;
+}
+
+ul.toggle > li {
+	list-style: none;
+}
+
+ul {
+	padding-inline-start: 1.7em;
+}
+
+ul > li {
+	padding-left: 0.1em;
+}
+
+ol {
+	padding-inline-start: 1.6em;
+}
+
+ol > li {
+	padding-left: 0.2em;
+}
+
+.mono ol {
+	padding-inline-start: 2em;
+}
+
+.mono ol > li {
+	text-indent: -0.4em;
+}
+
+.toggle {
+	padding-inline-start: 0em;
+	list-style-type: none;
+}
+
+/* Indent toggle children */
+.toggle > li > details {
+	padding-left: 1.7em;
+}
+
+.toggle > li > details > summary {
+	margin-left: -1.1em;
+}
+
+.selected-value {
+	display: inline-block;
+	padding: 0 0.5em;
+	background: rgba(206, 205, 202, 0.5);
+	border-radius: 3px;
+	margin-right: 0.5em;
+	margin-top: 0.3em;
+	margin-bottom: 0.3em;
+	white-space: nowrap;
+}
+
+.collection-title {
+	display: inline-block;
+	margin-right: 1em;
+}
+
+.page-description {
+    margin-bottom: 2em;
+}
+
+.simple-table {
+	margin-top: 1em;
+	font-size: 0.875rem;
+	empty-cells: show;
+}
+.simple-table td {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table th {
+	height: 29px;
+	min-width: 120px;
+}
+
+.simple-table-header-color {
+	background: rgb(247, 246, 243);
+	color: black;
+}
+.simple-table-header {
+	font-weight: 500;
+}
+
+time {
+	opacity: 0.5;
+}
+
+.icon {
+	display: inline-block;
+	max-width: 1.2em;
+	max-height: 1.2em;
+	text-decoration: none;
+	vertical-align: text-bottom;
+	margin-right: 0.5em;
+}
+
+img.icon {
+	border-radius: 3px;
+}
+
+.user-icon {
+	width: 1.5em;
+	height: 1.5em;
+	border-radius: 100%;
+	margin-right: 0.5rem;
+}
+
+.user-icon-inner {
+	font-size: 0.8em;
+}
+
+.text-icon {
+	border: 1px solid #000;
+	text-align: center;
+}
+
+.page-cover-image {
+	display: block;
+	object-fit: cover;
+	width: 100%;
+	max-height: 30vh;
+}
+
+.page-header-icon {
+	font-size: 3rem;
+	margin-bottom: 1rem;
+}
+
+.page-header-icon-with-cover {
+	margin-top: -0.72em;
+	margin-left: 0.07em;
+}
+
+.page-header-icon img {
+	border-radius: 3px;
+}
+
+.link-to-page {
+	margin: 1em 0;
+	padding: 0;
+	border: none;
+	font-weight: 500;
+}
+
+p > .user {
+	opacity: 0.5;
+}
+
+td > .user,
+td > time {
+	white-space: nowrap;
+}
+
+input[type="checkbox"] {
+	transform: scale(1.5);
+	margin-right: 0.6em;
+	vertical-align: middle;
+}
+
+p {
+	margin-top: 0.5em;
+	margin-bottom: 0.5em;
+}
+
+.image {
+	border: none;
+	margin: 1.5em 0;
+	padding: 0;
+	border-radius: 0;
+	text-align: center;
+}
+
+.code,
+code {
+	background: rgba(135, 131, 120, 0.15);
+	border-radius: 3px;
+	padding: 0.2em 0.4em;
+	border-radius: 3px;
+	font-size: 85%;
+	tab-size: 2;
+}
+
+code {
+	color: #eb5757;
+}
+
+.code {
+	padding: 1.5em 1em;
+}
+
+.code-wrap {
+	white-space: pre-wrap;
+	word-break: break-all;
+}
+
+.code > code {
+	background: none;
+	padding: 0;
+	font-size: 100%;
+	color: inherit;
+}
+
+blockquote {
+	font-size: 1.25em;
+	margin: 1em 0;
+	padding-left: 1em;
+	border-left: 3px solid rgb(55, 53, 47);
+}
+
+.bookmark {
+	text-decoration: none;
+	max-height: 8em;
+	padding: 0;
+	display: flex;
+	width: 100%;
+	align-items: stretch;
+}
+
+.bookmark-title {
+	font-size: 0.85em;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	height: 1.75em;
+	white-space: nowrap;
+}
+
+.bookmark-text {
+	display: flex;
+	flex-direction: column;
+}
+
+.bookmark-info {
+	flex: 4 1 180px;
+	padding: 12px 14px 14px;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+.bookmark-image {
+	width: 33%;
+	flex: 1 1 180px;
+	display: block;
+	position: relative;
+	object-fit: cover;
+	border-radius: 1px;
+}
+
+.bookmark-description {
+	color: rgba(55, 53, 47, 0.6);
+	font-size: 0.75em;
+	overflow: hidden;
+	max-height: 4.5em;
+	word-break: break-word;
+}
+
+.bookmark-href {
+	font-size: 0.75em;
+	margin-top: 0.25em;
+}
+
+.sans { font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol"; }
+.code { font-family: "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace; }
+.serif { font-family: Lyon-Text, Georgia, ui-serif, serif; }
+.mono { font-family: iawriter-mono, Nitti, Menlo, Courier, monospace; }
+.pdf .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK JP'; }
+.pdf:lang(zh-CN) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK SC'; }
+.pdf:lang(zh-TW) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK TC'; }
+.pdf:lang(ko-KR) .sans { font-family: Inter, ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol", 'Twemoji', 'Noto Color Emoji', 'Noto Sans CJK KR'; }
+.pdf .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .code { font-family: Source Code Pro, "SFMono-Regular", Menlo, Consolas, "PT Mono", "Liberation Mono", Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.pdf .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK JP'; }
+.pdf:lang(zh-CN) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK SC'; }
+.pdf:lang(zh-TW) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK TC'; }
+.pdf:lang(ko-KR) .serif { font-family: PT Serif, Lyon-Text, Georgia, ui-serif, serif, 'Twemoji', 'Noto Color Emoji', 'Noto Serif CJK KR'; }
+.pdf .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK JP'; }
+.pdf:lang(zh-CN) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK SC'; }
+.pdf:lang(zh-TW) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK TC'; }
+.pdf:lang(ko-KR) .mono { font-family: PT Mono, iawriter-mono, Nitti, Menlo, Courier, monospace, 'Twemoji', 'Noto Color Emoji', 'Noto Sans Mono CJK KR'; }
+.highlight-default {
+	color: rgba(55, 53, 47, 1);
+}
+.highlight-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.highlight-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.highlight-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.highlight-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.highlight-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.highlight-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.highlight-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.highlight-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.highlight-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.highlight-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.highlight-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.highlight-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.highlight-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.highlight-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.highlight-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.highlight-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.highlight-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.highlight-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.block-color-default {
+	color: inherit;
+	fill: inherit;
+}
+.block-color-gray {
+	color: rgba(120, 119, 116, 1);
+	fill: rgba(120, 119, 116, 1);
+}
+.block-color-brown {
+	color: rgba(159, 107, 83, 1);
+	fill: rgba(159, 107, 83, 1);
+}
+.block-color-orange {
+	color: rgba(217, 115, 13, 1);
+	fill: rgba(217, 115, 13, 1);
+}
+.block-color-yellow {
+	color: rgba(203, 145, 47, 1);
+	fill: rgba(203, 145, 47, 1);
+}
+.block-color-teal {
+	color: rgba(68, 131, 97, 1);
+	fill: rgba(68, 131, 97, 1);
+}
+.block-color-blue {
+	color: rgba(51, 126, 169, 1);
+	fill: rgba(51, 126, 169, 1);
+}
+.block-color-purple {
+	color: rgba(144, 101, 176, 1);
+	fill: rgba(144, 101, 176, 1);
+}
+.block-color-pink {
+	color: rgba(193, 76, 138, 1);
+	fill: rgba(193, 76, 138, 1);
+}
+.block-color-red {
+	color: rgba(212, 76, 71, 1);
+	fill: rgba(212, 76, 71, 1);
+}
+.block-color-gray_background {
+	background: rgba(241, 241, 239, 1);
+}
+.block-color-brown_background {
+	background: rgba(244, 238, 238, 1);
+}
+.block-color-orange_background {
+	background: rgba(251, 236, 221, 1);
+}
+.block-color-yellow_background {
+	background: rgba(251, 243, 219, 1);
+}
+.block-color-teal_background {
+	background: rgba(237, 243, 236, 1);
+}
+.block-color-blue_background {
+	background: rgba(231, 243, 248, 1);
+}
+.block-color-purple_background {
+	background: rgba(244, 240, 247, 0.8);
+}
+.block-color-pink_background {
+	background: rgba(249, 238, 243, 0.8);
+}
+.block-color-red_background {
+	background: rgba(253, 235, 236, 1);
+}
+.select-value-color-interactiveBlue { background-color: rgba(35, 131, 226, .07); }
+.select-value-color-pink { background-color: rgba(245, 224, 233, 1); }
+.select-value-color-purple { background-color: rgba(232, 222, 238, 1); }
+.select-value-color-green { background-color: rgba(219, 237, 219, 1); }
+.select-value-color-gray { background-color: rgba(227, 226, 224, 1); }
+.select-value-color-translucentGray { background-color: rgba(255, 255, 255, 0.0375); }
+.select-value-color-orange { background-color: rgba(250, 222, 201, 1); }
+.select-value-color-brown { background-color: rgba(238, 224, 218, 1); }
+.select-value-color-red { background-color: rgba(255, 226, 221, 1); }
+.select-value-color-yellow { background-color: rgba(253, 236, 200, 1); }
+.select-value-color-blue { background-color: rgba(211, 229, 239, 1); }
+.select-value-color-pageGlass { background-color: undefined; }
+.select-value-color-washGlass { background-color: undefined; }
+
+.checkbox {
+	display: inline-flex;
+	vertical-align: text-bottom;
+	width: 16;
+	height: 16;
+	background-size: 16px;
+	margin-left: 2px;
+	margin-right: 5px;
+}
+
+.checkbox-on {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20width%3D%2216%22%20height%3D%2216%22%20fill%3D%22%2358A9D7%22%2F%3E%0A%3Cpath%20d%3D%22M6.71429%2012.2852L14%204.9995L12.7143%203.71436L6.71429%209.71378L3.28571%206.2831L2%207.57092L6.71429%2012.2852Z%22%20fill%3D%22white%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+
+.checkbox-off {
+	background-image: url("data:image/svg+xml;charset=UTF-8,%3Csvg%20width%3D%2216%22%20height%3D%2216%22%20viewBox%3D%220%200%2016%2016%22%20fill%3D%22none%22%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%3E%0A%3Crect%20x%3D%220.75%22%20y%3D%220.75%22%20width%3D%2214.5%22%20height%3D%2214.5%22%20fill%3D%22white%22%20stroke%3D%22%2336352F%22%20stroke-width%3D%221.5%22%2F%3E%0A%3C%2Fsvg%3E");
+}
+	
+</style></head><body><article id="d2f757a0-15a3-4535-b963-ffe13cdd9d4c" class="page serif"><header><img class="page-cover-image" src="https://www.notion.so/images/page-cover/gradients_10.jpg" style="object-position:center 0.41999999999999815%"/><div class="page-header-icon page-header-icon-with-cover"><span class="icon">🖥️</span></div><h1 class="page-title">Informatyka Klasa 7 dział 1</h1><p class="page-description"></p></header><div class="page-body"><p id="5614ab35-74e9-4ed4-8771-d7e18f90cc80" class=""><mark class="highlight-orange"><strong>Lekcja 1</strong></mark></p><p id="6c507682-7a2d-4dfd-86f8-69ccfa749c5a" class="">
+</p><ul id="fca45ccf-ee60-402b-a75a-27c8d08a79f5" class="block-color-teal_background toggle"><li><details open=""><summary>Rozwiązywanie problemu można podzielić na cztery etapy.</summary><p id="1a65ca77-1189-41d3-b305-e74985ba9397" class="">P-<strong>Planowanie</strong> (ang. Plan) - powstawanie pytań i identyfikacja problemu, analiza, określenie celu do osiągnięcia, opracowanie rozwiązań, wyznaczenie priorytetów i podejmowanie decyzji.</p><p id="91fc3c3f-035e-4355-b18c-11561e36d08e" class="">D-<strong>Wprowadzanie rozwiązania</strong> (ang. Do), czego efektem jest gotowy produkt, np. program.</p><p id="d60da688-fbf4-4380-bf95-686965f80a36" class="">C-<strong>Sprawdzanie zgodności wyników z planem</strong> (ang. Check) - testowanie zastosowanego rozwiązania w D i ocena zgodności z planem punktu P.</p><p id="a04896af-e808-47fe-ba40-81769c7846c9" class="">A- <strong>Podejmowanie decyzji i działanie zgodnie z wynikiem sprawdzenia z C</strong> (ang. Action). </p></details></li></ul><blockquote id="fc080b26-8cb2-47b9-ac17-7f684ba74f2a" class="">Skrót-PDCA pochodzi od słów: Plan, do, check, action.</blockquote><p id="b5744177-981e-499b-a56c-981d858021d3" class="">
+</p><h3 id="2c5367b7-3e3a-462a-99bd-1f49d5fb7998" class="block-color-pink_background">Algorytm</h3><p id="14ddf3a4-baca-453c-9380-9b97348167cf" class="block-color-pink_background">to uporządkowany opis postępowania podczas rozwiązywania problemu.</p><h3 id="48a7281f-ca4d-4b5b-8723-dcffacdcfc64" class="block-color-blue_background">Instrukcja</h3><p id="9f1d96b9-6d15-40b4-ad69-c0623a1a87df" class="block-color-blue_background">opis czynności zawartej w algorytmie.</p><h3 id="2c011a0d-3721-4d44-a671-a17825c873bc" class="block-color-orange_background">Opis słowny</h3><p id="0b6dc54d-eaf6-4f75-b9cc-ab08e3a8a181" class="block-color-orange_background">to przedstawienie rozwiązania problemu za pomocą słów.</p><h3 id="722d61a6-f49f-4e0d-b6ae-c4a8d0553989" class="block-color-teal_background">Lista kroków </h3><p id="14ae4519-12ac-4e3f-9374-53d058762b22" class="block-color-teal_background">to przedstawienie algorytmu w kolejnych punktach prowadzących do rozwiązania problemu.</p><p id="67fa9f28-f7bf-4101-b745-f425fd514b78" class="">
+</p><p id="23bae324-dbc0-4aea-b0ac-d645ab906259" class=""><strong>Schemat blokowy</strong></p><ol type="1" id="c899ea9d-2b58-4e0b-b0a7-d14933b5e973" class="numbered-list" start="1"><li>Blok graniczny “początek”- rozpoczyna algorytm</li></ol><ol type="1" id="0d81365f-298e-42a2-a239-bb30a495d8db" class="numbered-list" start="2"><li>Blok graniczny “koniec”- kończy algorytm </li></ol><ol type="1" id="d9a97585-2628-4729-8be5-f21e1b2705a4" class="numbered-list" start="3"><li>Blok wejścia-wyjścia- Blok “Wejścia” służy do wprowadzania danych wejściowych, a blok “wyjścia” służy do wprowadzania (podawania) wyników.</li></ol><ol type="1" id="08743bb0-acf0-4c45-9144-17e0bc39b79c" class="numbered-list" start="4"><li>Blok operacyjny- Blok służący do wykonywania operacji, czyli konkretnych działań</li></ol><ol type="1" id="c5122f61-1aaa-46d4-851d-01d4da6c6161" class="numbered-list" start="5"><li>Blok warunkowy- Blok sprawdzający warunek (zwany też blokiem decyzyjnym) z dwoma połączeniami wyjścia.</li></ol><h3 id="f9146eb9-86ac-4f8b-aa6a-9fd0263705a5" class="block-color-red_background">Język programowania </h3><p id="0f4d4282-e112-4f00-bd33-dc9c9599ad2d" class="block-color-red_background">to sztuczny język służący do zapisywania programów i komunikowania się człowieka z komputerem.</p><p id="da52293c-5366-4faf-bee5-c31f79d012fb" class="">
+</p><p id="f4f0d815-1b8e-45b6-b30a-7001981d9859" class=""><mark class="highlight-brown"><strong>Lekcja 2</strong></mark></p><p id="ec5d0970-bec7-471e-9a35-bb8672568900" class="">
+</p><h3 id="d596390d-bbca-43d4-b7b6-0ab483e9d4a8" class=""><mark class="highlight-yellow_background">Algorytmy liniowe (ang. linear algorithm)</mark></h3><p id="8e112922-0417-4d74-a5ec-d32db5b7d13e" class=""><mark class="highlight-yellow_background">to algorytmy, w których nie określono żadnych warunków.</mark></p><h3 id="e3c54992-b0df-4df0-bbed-4a6551ef9c19" class=""><mark class="highlight-purple_background">Algorytmy warunkowy (ang. conditional algorithm)</mark></h3><p id="a814ef23-a344-4fd7-b4a7-afd81bf67675" class=""><mark class="highlight-purple_background">to algorytmy, w których wykonanie instrukcji uzależnione jest od spełnienia lub niespełnienia warunku.</mark></p><h3 id="c3afa79e-8c08-47d6-8351-a30606d28a12" class=""><mark class="highlight-orange_background">Heurystyka</mark></h3><h3 id="a0e58ce8-338f-431d-95c8-7a3da1484921" class=""><mark class="highlight-orange_background">oznacza metodę polegającą na znajdowaniu rozwiązań, dla której nie ma gwarancji znalezienia rozwiązania optymalnego , a często nawet prawidłowego.</mark></h3><p id="d1162015-ca96-4129-99b8-0e80c41dab03" class="">
+</p><p id="8360923c-2d0a-4346-be30-403f54a86318" class="">W skrzynce warunkowej wpisujemy warunek logiczny, stosując następujące znaki</p><ul id="5586b411-54a8-4a79-aa21-92b53b5d3f99" class="toggle"><li><details open=""><summary>W skrzynce warunkowej wpisujemy warunek logiczny, stosując następujące znaki:</summary><p id="c95644bf-5794-48d7-9c7e-7e909595e92b" class="">==     równy, np. (a==5)</p><p id="662f7449-dafa-4cfb-bdbb-fc8652bffcde" class="">!=       nie jest równy np. (a!=5</p><p id="d486c4e0-e68a-4306-89b5-d1245abcdd89" class="">&lt;&gt;     różny, np. (a&lt;&gt;5)</p><p id="f00f528e-53d3-43f1-94b6-68dcd2c6a1b5" class="">&lt;        mniejszy, np. (a&lt;5)</p><p id="42c10227-ba3a-4891-b569-bfb06fd97b76" class="">&gt;        większy, np. (a&gt;5)</p><p id="acdff41f-18bb-4cb5-b321-3e8a849b8453" class="">&lt;=      mniejszy lub równy, np. (a&lt;=5)</p><p id="5dce3912-8754-4925-ac3a-ecce2c4ee26f" class="">&gt;=      większy lub równy, np. (a&gt;=5)</p></details></li></ul><div id="76a37c32-ecc9-42e4-a281-a1889a2a8d2b" class="column-list"><div id="2a705b02-5966-411b-9202-219e4ed93aff" style="width:100%" class="column"><h3 id="bde410d6-f332-4dd6-b025-2910372ec381" class=""><mark class="highlight-teal_background">Iteracja (pętla) </mark></h3><p id="9114fe73-6bde-4d1f-9d50-6b445ed0bdbd" class=""><mark class="highlight-teal_background">w algorytmie polega na wielokrotnym powtarzaniu instrukcji.</mark></p><h3 id="737b70e7-5238-4a82-ba38-609fbe9e8bcf" class=""><mark class="highlight-orange_background">Algorytm rekurencyjny</mark></h3><p id="188f8a94-fd1b-4895-a76f-41c4ac6e2a23" class=""><mark class="highlight-orange_background">Algorytm rekurencyjny to taki, który wywołuje sam siebie w celu rozwiązania problemu.</mark></p><h3 id="36b7c3ce-0361-4852-9799-2242997fb749" class=""><mark class="highlight-yellow_background">Rekurencja</mark></h3><p id="3245ba83-b297-4019-a090-4902fd0b2660" class=""><mark class="highlight-yellow_background">to odwołanie się np. funkcji lub definicji do samej siebie.</mark></p><h3 id="431cc43c-a079-40eb-a004-df259d431509" class=""><mark class="highlight-purple_background">JavaBlock</mark></h3><p id="d975f70a-b3a7-4004-afb7-5f271dab8375" class=""><mark class="highlight-purple_background">to oprogramowanie za pomocą którego można demonstrować działanie argumentów.</mark></p><p id="29cad8c9-ec2d-4a0e-abdc-e44d200c7174" class="">
+</p><p id="cb37ab08-45ef-42fc-8b9c-14ecfee5adb2" class="">
+</p><p id="cb3ba200-357e-41de-b244-4d636c4c7dee" class="">
+</p><p id="816a0c7e-a16a-4ec5-868b-af94209e7f50" class="">
+</p></div><div id="18f413b0-6f0d-4667-b23d-636048ad351c" style="width:87.5%" class="column"><p id="678bf998-774c-4e7f-9b4b-8b93d35b5f42" class="">
+</p></div></div><p id="1825c0a5-cff2-4999-884a-15a13192afac" class="">
+</p></div></article><span class="sans" style="font-size:14px;padding-top:2em"></span></body></html>
